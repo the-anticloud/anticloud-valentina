@@ -1,0 +1,67 @@
+{
+  "bomFormat": "CycloneDX",
+  "specVersion": "1.5",
+  "serialNumber": "urn:uuid:9bf1059c-5250-5b27-a236-1bc4e48c1c17",
+  "version": 1,
+  "metadata": {
+    "timestamp": "2026-10-05T15:35:31Z",
+    "component": {
+      "type": "application",
+      "name": "VALENTINA",
+      "version": "981a84a830ca",
+      "bom-ref": "pkg:generic/anticloud/VALENTINA@981a84a830ca",
+      "purl": "pkg:generic/anticloud/VALENTINA@981a84a830ca",
+      "licenses": [
+        {
+          "license": {
+            "id": "NOASSERTION"
+          }
+        }
+      ]
+    },
+    "properties": [
+      {
+        "name": "anticloud:source-commit",
+        "value": "981a84a830ca83dc8f2f782c6dff849a271e7811"
+      },
+      {
+        "name": "anticloud:source-url",
+        "value": "https://github.com/dismine/valentina"
+      },
+      {
+        "name": "anticloud:tier",
+        "value": "tier-agent"
+      }
+    ]
+  },
+  "components": [
+    {
+      "type": "library",
+      "name": "patch-ng",
+      "version": "(>=1.17.4",
+      "purl": "pkg:pypi/patch-ng@(>=1.17.4",
+      "bom-ref": "pypi/patch-ng@(>=1.17.4"
+    },
+    {
+      "type": "library",
+      "name": "conan",
+      "version": "(>=2.5.0",
+      "purl": "pkg:pypi/conan@(>=2.5.0",
+      "bom-ref": "pypi/conan@(>=2.5.0"
+    },
+    {
+      "type": "library",
+      "name": "boto3",
+      "version": "(>=1.39.16",
+      "purl": "pkg:pypi/boto3@(>=1.39.16",
+      "bom-ref": "pypi/boto3@(>=1.39.16"
+    },
+    {
+      "type": "library",
+      "name": "py7zr",
+      "version": "(>=1.0.0",
+      "purl": "pkg:pypi/py7zr@(>=1.0.0",
+      "bom-ref": "pypi/py7zr@(>=1.0.0"
+    }
+  ]
+}

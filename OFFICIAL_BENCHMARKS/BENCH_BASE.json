@@ -1,0 +1,805 @@
+{
+  "schema": "anticloud.tier-bench/1",
+  "project": "VALENTINA",
+  "source": {
+    "repo_path": "E:\\fenta\\Downloads\\The Anticloud\\ANTICLOUD_REPOS\\CLOTHING_MANUFACTURING\\VALENTINA\\UPSTREAM_CLONE",
+    "git": {
+      "head": "981a84a830ca83dc8f2f782c6dff849a271e7811",
+      "url": "https://github.com/dismine/valentina",
+      "branch": "develop",
+      "committed_at": "2026-10-05T11:57:16+03:00"
+    }
+  },
+  "metrics": {
+    "files_total": 1316,
+    "source_files_scanned": 292,
+    "lines_of_code": 659421,
+    "languages": {
+      ".png": 489,
+      ".svg": 281,
+      ".h": 136,
+      ".cpp": 109,
+      ".val": 73,
+      ".ui": 46,
+      ".qbs": 28,
+      ".vit": 28,
+      ".tpp": 24,
+      ".ts": 21,
+      ".sh": 12,
+      ".txt": 9,
+      ".py": 9,
+      "(none)": 8,
+      ".yml": 7
+    }
+  },
+  "licence": {
+    "spdx": "NOASSERTION",
+    "class": "C",
+    "source_file": null,
+    "redistribution_allowed": false
+  },
+  "dependencies": {
+    "count": 4,
+    "unique": 4,
+    "by_ecosystem": {
+      "pypi": 4
+    },
+    "list": [
+      {
+        "ecosystem": "pypi",
+        "name": "patch-ng",
+        "version": "(>=1.17.4",
+        "source_file": "share/ci/pyproject.toml",
+        "raw": "patch-ng (>=1.17.4"
+      },
+      {
+        "ecosystem": "pypi",
+        "name": "conan",
+        "version": "(>=2.5.0",
+        "source_file": "share/ci/pyproject.toml",
+        "raw": "conan (>=2.5.0"
+      },
+      {
+        "ecosystem": "pypi",
+        "name": "boto3",
+        "version": "(>=1.39.16",
+        "source_file": "share/ci/pyproject.toml",
+        "raw": "boto3 (>=1.39.16"
+      },
+      {
+        "ecosystem": "pypi",
+        "name": "py7zr",
+        "version": "(>=1.0.0",
+        "source_file": "share/ci/pyproject.toml",
+        "raw": "py7zr (>=1.0.0"
+      }
+    ]
+  },
+  "owasp_top10": {
+    "total_findings": 278,
+    "files_with_findings": 245,
+    "severity": {
+      "high": 16,
+      "medium": 0,
+      "low": 262
+    },
+    "categories": {
+      "A01-BrokenAccessControl": {
+        "count": 0,
+        "findings": []
+      },
+      "A02-CryptographicFailures": {
+        "count": 0,
+        "findings": []
+      },
+      "A03-Injection": {
+        "count": 16,
+        "findings": [
+          {
+            "severity": "high",
+            "file": "qbs/modules/ebr/rcc.js",
+            "line": 23,
+            "cwe": "CWE-95",
+            "snippet": "var exitCode = process.exec(rcc, [\"--list\", qrcFilePath], true);"
+          },
+          {
+            "severity": "high",
+            "file": "qbs/modules/freedesktop2/freedesktop2.js",
+            "line": 42,
+            "cwe": "CWE-95",
+            "snippet": "var match = sectionRex.exec(line);"
+          },
+          {
+            "severity": "high",
+            "file": "scripts/install-qt.sh",
+            "line": 528,
+            "cwe": "CWE-78",
+            "snippet": "TOOLCHAIN_DIR=\"$(resolve_toolchain_dir)\""
+          },
+          {
+            "severity": "high",
+            "file": "scripts/lupdate.sh",
+            "line": 11,
+            "cwe": "CWE-78",
+            "snippet": "echo \"ERROR: expected ../valentina.qbs relative to $(pwd) -- refusing to run.\" >&2"
+          },
+          {
+            "severity": "high",
+            "file": "scripts/sonar-scanner.sh",
+            "line": 30,
+            "cwe": "CWE-78",
+            "snippet": "--jobs $(nproc) \\"
+          },
+          {
+            "severity": "high",
+            "file": "src/app/puzzle/carousel/vpcarrouselpiecelist.cpp",
+            "line": 281,
+            "cwe": "CWE-95",
+            "snippet": "QAction *const selectedAction = menu.exec(event->globalPos()); // NOLINT(misc-const-correctness)"
+          },
+          {
+            "severity": "high",
+            "file": "src/app/puzzle/scene/vpgraphicspiece.cpp",
+            "line": 341,
+            "cwe": "CWE-95",
+            "snippet": "QAction *const selectedAction = menu.exec(event->screenPos()); // NOLINT(misc-const-correctness)"
+          },
+          {
+            "severity": "high",
+            "file": "src/app/puzzle/scene/vpmaingraphicsview.cpp",
+            "line": 336,
+            "cwe": "CWE-95",
+            "snippet": "QAction  const*selectedAction = menu.exec(event->globalPos());"
+          },
+          {
+            "severity": "high",
+            "file": "src/app/tape/dialogs/dialogmdatabase.cpp",
+            "line": 298,
+            "cwe": "CWE-95",
+            "snippet": "menu.exec(ui->treeWidget->mapToGlobal(pos));"
+          },
+          {
+            "severity": "high",
+            "file": "src/app/tape/dialogs/dialogrestrictdimension.cpp",
+            "line": 431,
+            "cwe": "CWE-95",
+            "snippet": "if (const QAction *selectedAction = menu->exec(ui->tableWidget->viewport()->mapToGlobal(pos));"
+          },
+          {
+            "severity": "high",
+            "file": "src/app/valentina/mainwindow.cpp",
+            "line": 8714,
+            "cwe": "CWE-95",
+            "snippet": "menu.exec(globalPos) != arrangeAction)"
+          },
+          {
+            "severity": "high",
+            "file": "src/app/valentina/dialogs/dialogpatternproperties.cpp",
+            "line": 380,
+            "cwe": "CWE-95",
+            "snippet": "menu.exec(QCursor::pos());"
+          },
+          {
+            "severity": "high",
+            "file": "src/app/valentina/dialogs/vwidgetbackgroundimages.cpp",
+            "line": 372,
+            "cwe": "CWE-95",
+            "snippet": "QAction  const*selectedAction = menu.exec(ui->tableWidget->viewport()->mapToGlobal(pos));"
+          },
+          {
+            "severity": "high",
+            "file": "src/app/valentina/dialogs/vwidgetdependencies.cpp",
+            "line": 684,
+            "cwe": "CWE-95",
+            "snippet": "QAction const *selectedAction = contextMenu.exec(ui->treeView->viewport()->mapToGlobal(pos));"
+          },
+          {
+            "severity": "high",
+            "file": "src/app/valentina/dialogs/vwidgetdetails.cpp",
+            "line": 417,
+            "cwe": "CWE-95",
+            "snippet": "QAction  const*selectedAction = menu->exec(ui->tableWidget->viewport()->mapToGlobal(pos));"
+          },
+          {
+            "severity": "high",
+            "file": "src/app/valentina/dialogs/vwidgetgroups.cpp",
+            "line": 304,
+            "cwe": "CWE-95",
+            "snippet": "QAction  const*selectedAction = menu->exec(ui->tableWidget->viewport()->mapToGlobal(pos));"
+          }
+        ]
+      },
+      "A04-InsecureDesign": {
+        "count": 47,
+        "findings": [
+          {
+            "severity": "low",
+            "file": "qbs/module-providers/conan.js",
+            "line": 221,
+            "cwe": "CWE-",
+            "snippet": "// TODO: there's a weird issue with system include dirs with xcode-less clang - incorrect include order?"
+          },
+          {
+            "severity": "low",
+            "file": "qbs/module-providers/path-probe.js",
+            "line": 103,
+            "cwe": "CWE-",
+            "snippet": "// FIXME: Suggest how to obtain paths from system"
+          },
+          {
+            "severity": "low",
+            "file": "share/translations/valentina.ts",
+            "line": 14737,
+            "cwe": "CWE-",
+            "snippet": "<source>Can&apos;t convert toDouble parameter</source>"
+          },
+          {
+            "severity": "low",
+            "file": "share/translations/valentina_cs_CZ.ts",
+            "line": 14232,
+            "cwe": "CWE-",
+            "snippet": "<source>Can&apos;t convert toDouble parameter</source>"
+          },
+          {
+            "severity": "low",
+            "file": "share/translations/valentina_da_DK.ts",
+            "line": 14229,
+            "cwe": "CWE-",
+            "snippet": "<source>Can&apos;t convert toDouble parameter</source>"
+          },
+          {
+            "severity": "low",
+            "file": "share/translations/valentina_de_DE.ts",
+            "line": 14229,
+            "cwe": "CWE-",
+            "snippet": "<source>Can&apos;t convert toDouble parameter</source>"
+          },
+          {
+            "severity": "low",
+            "file": "share/translations/valentina_el_GR.ts",
+            "line": 14229,
+            "cwe": "CWE-",
+            "snippet": "<source>Can&apos;t convert toDouble parameter</source>"
+          },
+          {
+            "severity": "low",
+            "file": "share/translations/valentina_es_ES.ts",
+            "line": 3973,
+            "cwe": "CWE-",
+            "snippet": "<translation>Actualizar un patr\u00f3n con todos los cambios que hizo</translation>"
+          },
+          {
+            "severity": "low",
+            "file": "share/translations/valentina_fi_FI.ts",
+            "line": 14229,
+            "cwe": "CWE-",
+            "snippet": "<source>Can&apos;t convert toDouble parameter</source>"
+          },
+          {
+            "severity": "low",
+            "file": "share/translations/valentina_fr_FR.ts",
+            "line": 14227,
+            "cwe": "CWE-",
+            "snippet": "<source>Can&apos;t convert toDouble parameter</source>"
+          },
+          {
+            "severity": "low",
+            "file": "share/translations/valentina_he_IL.ts",
+            "line": 14213,
+            "cwe": "CWE-",
+            "snippet": "<source>Can&apos;t convert toDouble parameter</source>"
+          },
+          {
+            "severity": "low",
+            "file": "share/translations/valentina_hr_HR.ts",
+            "line": 14232,
+            "cwe": "CWE-",
+            "snippet": "<source>Can&apos;t convert toDouble parameter</source>"
+          },
+          {
+            "severity": "low",
+            "file": "share/translations/valentina_hu_HU.ts",
+            "line": 14226,
+            "cwe": "CWE-",
+            "snippet": "<source>Can&apos;t convert toDouble parameter</source>"
+          },
+          {
+            "severity": "low",
+            "file": "share/translations/valentina_id_ID.ts",
+            "line": 14226,
+            "cwe": "CWE-",
+            "snippet": "<source>Can&apos;t convert toDouble parameter</source>"
+          },
+          {
+            "severity": "low",
+            "file": "share/translations/valentina_it_IT.ts",
+            "line": 11357,
+            "cwe": "CWE-",
+            "snippet": "<translation>Il metodo %1 non fa nulla in modalit\u00e0 GUI</translation>"
+          },
+          {
+            "severity": "low",
+            "file": "share/translations/valentina_ja_JP.ts",
+            "line": 14210,
+            "cwe": "CWE-",
+            "snippet": "<source>Can&apos;t convert toDouble parameter</source>"
+          },
+          {
+            "severity": "low",
+            "file": "share/translations/valentina_nl_NL.ts",
+            "line": 14229,
+            "cwe": "CWE-",
+            "snippet": "<source>Can&apos;t convert toDouble parameter</source>"
+          },
+          {
+            "severity": "low",
+            "file": "share/translations/valentina_pl_PL.ts",
+            "line": 14232,
+            "cwe": "CWE-",
+            "snippet": "<source>Can&apos;t convert toDouble parameter</source>"
+          },
+          {
+            "severity": "low",
+            "file": "share/translations/valentina_pt_BR.ts",
+            "line": 5120,
+            "cwe": "CWE-",
+            "snippet": "<translation>Esconder todos</translation>"
+          },
+          {
+            "severity": "low",
+            "file": "share/translations/valentina_pt_PT.ts",
+            "line": 5120,
+            "cwe": "CWE-",
+            "snippet": "<translation>Esconder todos</translation>"
+          },
+          {
+            "severity": "low",
+            "file": "share/translations/valentina_ro_RO.ts",
+            "line": 14232,
+            "cwe": "CWE-",
+            "snippet": "<source>Can&apos;t convert toDouble parameter</source>"
+          },
+          {
+            "severity": "low",
+            "file": "share/translations/valentina_uk_UA.ts",
+            "line": 14232,
+            "cwe": "CWE-",
+            "snippet": "<source>Can&apos;t convert toDouble parameter</source>"
+          },
+          {
+            "severity": "low",
+            "file": "share/translations/valentina_zh_CN.ts",
+            "line": 14210,
+            "cwe": "CWE-",
+            "snippet": "<source>Can&apos;t convert toDouble parameter</source>"
+          },
+          {
+            "severity": "low",
+            "file": "src/app/puzzle/vpapplication.cpp",
+            "line": 149,
+            "cwe": "CWE-",
+            "snippet": "// fixme: trying to make sure there are no save/load dialogs are opened, because error message"
+          },
+          {
+            "severity": "low",
+            "file": "src/app/puzzle/vpmainwindow.cpp",
+            "line": 1978,
+            "cwe": "CWE-",
+            "snippet": "// TODO: Implement maybe save check"
+          }
+        ]
+      },
+      "A05-SecurityMisconfiguration": {
+        "count": 0,
+        "findings": []
+      },
+      "A06-VulnerableComponents": {
+        "count": 0,
+        "findings": []
+      },
+      "A07-AuthFailures": {
+        "count": 0,
+        "findings": []
+      },
+      "A08-SoftwareDataIntegrity": {
+        "count": 215,
+        "findings": [
+          {
+            "severity": "low",
+            "file": "qbs/module-providers/path-probe.js",
+            "line": 4,
+            "cwe": "CWE-319",
+            "snippet": "** Contact: http://www.qt.io/licensing"
+          },
+          {
+            "severity": "low",
+            "file": "qbs/modules/freedesktop2/freedesktop2.js",
+            "line": 4,
+            "cwe": "CWE-319",
+            "snippet": "** Contact: http://www.qt.io/licensing"
+          },
+          {
+            "severity": "low",
+            "file": "qbs/modules/innosetup/codesign.js",
+            "line": 5,
+            "cwe": "CWE-319",
+            "snippet": "** Contact: http://www.qt.io/licensing"
+          },
+          {
+            "severity": "low",
+            "file": "scripts/alphabets.py",
+            "line": 5,
+            "cwe": "CWE-319",
+            "snippet": "#Alphabets was taken from website http://www.alphabet-letters.com/"
+          },
+          {
+            "severity": "low",
+            "file": "scripts/fix_png.sh",
+            "line": 7,
+            "cwe": "CWE-319",
+            "snippet": "# Link: http://pmt.sourceforge.net/pngcrush/"
+          },
+          {
+            "severity": "low",
+            "file": "share/coverity_model.cpp",
+            "line": 16,
+            "cwe": "CWE-319",
+            "snippet": "* http://scan.coverity.com/projects/1820"
+          },
+          {
+            "severity": "low",
+            "file": "src/app/puzzle/main.cpp",
+            "line": 25,
+            "cwe": "CWE-319",
+            "snippet": "**  along with Valentina.  If not, see <http://www.gnu.org/licenses/>."
+          },
+          {
+            "severity": "low",
+            "file": "src/app/puzzle/stable.cpp",
+            "line": 25,
+            "cwe": "CWE-319",
+            "snippet": "**  along with Valentina.  If not, see <http://www.gnu.org/licenses/>."
+          },
+          {
+            "severity": "low",
+            "file": "src/app/puzzle/stable.h",
+            "line": 25,
+            "cwe": "CWE-319",
+            "snippet": "**  along with Valentina.  If not, see <http://www.gnu.org/licenses/>."
+          },
+          {
+            "severity": "low",
+            "file": "src/app/puzzle/version.h",
+            "line": 25,
+            "cwe": "CWE-319",
+            "snippet": "**  along with Valentina.  If not, see <http://www.gnu.org/licenses/>."
+          },
+          {
+            "severity": "low",
+            "file": "src/app/puzzle/vpapplication.cpp",
+            "line": 25,
+            "cwe": "CWE-319",
+            "snippet": "**  along with Valentina.  If not, see <http://www.gnu.org/licenses/>."
+          },
+          {
+            "severity": "low",
+            "file": "src/app/puzzle/vpapplication.h",
+            "line": 25,
+            "cwe": "CWE-319",
+            "snippet": "**  along with Valentina.  If not, see <http://www.gnu.org/licenses/>."
+          },
+          {
+            "severity": "low",
+            "file": "src/app/puzzle/vpcommandline.cpp",
+            "line": 25,
+            "cwe": "CWE-319",
+            "snippet": "**  along with Valentina.  If not, see <http://www.gnu.org/licenses/>."
+          },
+          {
+            "severity": "low",
+            "file": "src/app/puzzle/vpcommandline.h",
+            "line": 25,
+            "cwe": "CWE-319",
+            "snippet": "**  along with Valentina.  If not, see <http://www.gnu.org/licenses/>."
+          },
+          {
+            "severity": "low",
+            "file": "src/app/puzzle/vpcommands.cpp",
+            "line": 25,
+            "cwe": "CWE-319",
+            "snippet": "**  along with Valentina.  If not, see <http://www.gnu.org/licenses/>."
+          },
+          {
+            "severity": "low",
+            "file": "src/app/puzzle/vpcommands.h",
+            "line": 25,
+            "cwe": "CWE-319",
+            "snippet": "**  along with Valentina.  If not, see <http://www.gnu.org/licenses/>."
+          },
+          {
+            "severity": "low",
+            "file": "src/app/puzzle/vpmainwindow.cpp",
+            "line": 25,
+            "cwe": "CWE-319",
+            "snippet": "**  along with Valentina.  If not, see <http://www.gnu.org/licenses/>."
+          },
+          {
+            "severity": "low",
+            "file": "src/app/puzzle/vpmainwindow.h",
+            "line": 25,
+            "cwe": "CWE-319",
+            "snippet": "**  along with Valentina.  If not, see <http://www.gnu.org/licenses/>."
+          },
+          {
+            "severity": "low",
+            "file": "src/app/puzzle/vpsettings.cpp",
+            "line": 25,
+            "cwe": "CWE-319",
+            "snippet": "**  along with Valentina.  If not, see <http://www.gnu.org/licenses/>."
+          },
+          {
+            "severity": "low",
+            "file": "src/app/puzzle/vpsettings.h",
+            "line": 25,
+            "cwe": "CWE-319",
+            "snippet": "**  along with Valentina.  If not, see <http://www.gnu.org/licenses/>."
+          },
+          {
+            "severity": "low",
+            "file": "src/app/puzzle/vptilefactory.h",
+            "line": 25,
+            "cwe": "CWE-319",
+            "snippet": "**  along with Valentina.  If not, see <http://www.gnu.org/licenses/>."
+          },
+          {
+            "severity": "low",
+            "file": "src/app/puzzle/vpuzzleshortcutmanager.cpp",
+            "line": 25,
+            "cwe": "CWE-319",
+            "snippet": "**  along with Valentina.  If not, see <http://www.gnu.org/licenses/>."
+          },
+          {
+            "severity": "low",
+            "file": "src/app/puzzle/vpuzzleshortcutmanager.h",
+            "line": 25,
+            "cwe": "CWE-319",
+            "snippet": "**  along with Valentina.  If not, see <http://www.gnu.org/licenses/>."
+          },
+          {
+            "severity": "low",
+            "file": "src/app/puzzle/carousel/vpcarrousel.cpp",
+            "line": 25,
+            "cwe": "CWE-319",
+            "snippet": "**  along with Valentina.  If not, see <http://www.gnu.org/licenses/>."
+          },
+          {
+            "severity": "low",
+            "file": "src/app/puzzle/carousel/vpcarrousel.h",
+            "line": 25,
+            "cwe": "CWE-319",
+            "snippet": "**  along with Valentina.  If not, see <http://www.gnu.org/licenses/>."
+          }
+        ]
+      },
+      "A09-LoggingMonitoringFailures": {
+        "count": 0,
+        "findings": []
+      },
+      "A10-SSRF": {
+        "count": 0,
+        "findings": []
+      }
+    }
+  },
+  "owasp_llm_top10": {
+    "total_findings": 13,
+    "files_with_findings": 13,
+    "severity": {
+      "high": 0,
+      "medium": 13,
+      "low": 0
+    },
+    "categories": {
+      "LLM01-PromptInjection": {
+        "count": 13,
+        "findings": [
+          {
+            "severity": "medium",
+            "file": "src/app/puzzle/vpmainwindow.cpp",
+            "line": 1084,
+            "cwe": "CWE-1336",
+            "snippet": "[this] { SheetSize(SheetTemplate()); });"
+          },
+          {
+            "severity": "medium",
+            "file": "src/app/puzzle/vpmainwindow.h",
+            "line": 473,
+            "cwe": "CWE-1336",
+            "snippet": "auto Template(VAbstractLayoutDialog::PaperSizeTemplate t) const -> QSizeF;"
+          },
+          {
+            "severity": "medium",
+            "file": "src/app/puzzle/dialogs/configpages/puzzlepreferenceslayoutpage.cpp",
+            "line": 56,
+            "cwe": "CWE-1336",
+            "snippet": "SheetSize(SheetTemplate());"
+          },
+          {
+            "severity": "medium",
+            "file": "src/app/puzzle/dialogs/configpages/puzzlepreferenceslayoutpage.h",
+            "line": 59,
+            "cwe": "CWE-1336",
+            "snippet": "void FindSheetTemplate();"
+          },
+          {
+            "severity": "medium",
+            "file": "src/app/tape/tmainwindow.cpp",
+            "line": 713,
+            "cwe": "CWE-1336",
+            "snippet": "void TMainWindow::OpenTemplate()"
+          },
+          {
+            "severity": "medium",
+            "file": "src/app/tape/tmainwindow.h",
+            "line": 88,
+            "cwe": "CWE-1336",
+            "snippet": "void OpenTemplate();"
+          },
+          {
+            "severity": "medium",
+            "file": "src/app/tape/vtapesettings.cpp",
+            "line": 87,
+            "cwe": "CWE-1336",
+            "snippet": "auto VTapeSettings::GetPathTemplate() const -> QString"
+          },
+          {
+            "severity": "medium",
+            "file": "src/app/tape/vtapesettings.h",
+            "line": 53,
+            "cwe": "CWE-1336",
+            "snippet": "auto GetPathTemplate() const -> QString;"
+          },
+          {
+            "severity": "medium",
+            "file": "src/app/valentina/core/vcmdexport.cpp",
+            "line": 106,
+            "cwe": "CWE-1336",
+            "snippet": "if (!diag.SelectTemplate(OptPaperSize()))"
+          },
+          {
+            "severity": "medium",
+            "file": "src/app/valentina/dialogs/dialoglayoutsettings.cpp",
+            "line": 442,
+            "cwe": "CWE-1336",
+            "snippet": "SheetSize(Template());"
+          },
+          {
+            "severity": "medium",
+            "file": "src/app/valentina/dialogs/dialoglayoutsettings.h",
+            "line": 121,
+            "cwe": "CWE-1336",
+            "snippet": "auto SelectTemplate(const PaperSizeTemplate &id) -> bool;"
+          },
+          {
+            "severity": "medium",
+            "file": "src/app/valentina/dialogs/dialogpatternproperties.cpp",
+            "line": 537,
+            "cwe": "CWE-1336",
+            "snippet": "path = settings->GetPathLabelTemplate();"
+          },
+          {
+            "severity": "medium",
+            "file": "src/app/valentina/xml/vpattern.cpp",
+            "line": 1406,
+            "cwe": "CWE-1336",
+            "snippet": "ppData.SetLabelTemplate(GetLabelTemplate(domElement));"
+          }
+        ]
+      },
+      "LLM02-SensitiveInfoDisclosure": {
+        "count": 0,
+        "findings": []
+      },
+      "LLM03-SupplyChain": {
+        "count": 0,
+        "findings": []
+      },
+      "LLM04-DataPoisoning": {
+        "count": 0,
+        "findings": []
+      },
+      "LLM05-ImproperOutputHandling": {
+        "count": 0,
+        "findings": []
+      },
+      "LLM06-ExcessiveAgency": {
+        "count": 0,
+        "findings": []
+      },
+      "LLM07-SystemPromptLeak": {
+        "count": 0,
+        "findings": []
+      },
+      "LLM08-VectorEmbeddingWeaknesses": {
+        "count": 0,
+        "findings": []
+      },
+      "LLM09-Misinformation": {
+        "count": 0,
+        "findings": []
+      },
+      "LLM10-UnboundedConsumption": {
+        "count": 0,
+        "findings": []
+      }
+    }
+  },
+  "sbom": {
+    "bomFormat": "CycloneDX",
+    "specVersion": "1.5",
+    "serialNumber": "urn:uuid:9bf1059c-5250-5b27-a236-1bc4e48c1c17",
+    "version": 1,
+    "metadata": {
+      "timestamp": "2026-10-05T15:35:31Z",
+      "component": {
+        "type": "application",
+        "name": "VALENTINA",
+        "version": "981a84a830ca",
+        "bom-ref": "pkg:generic/anticloud/VALENTINA@981a84a830ca",
+        "purl": "pkg:generic/anticloud/VALENTINA@981a84a830ca",
+        "licenses": [
+          {
+            "license": {
+              "id": "NOASSERTION"
+            }
+          }
+        ]
+      },
+      "properties": [
+        {
+          "name": "anticloud:source-commit",
+          "value": "981a84a830ca83dc8f2f782c6dff849a271e7811"
+        },
+        {
+          "name": "anticloud:source-url",
+          "value": "https://github.com/dismine/valentina"
+        },
+        {
+          "name": "anticloud:tier",
+          "value": "tier-agent"
+        }
+      ]
+    },
+    "components": [
+      {
+        "type": "library",
+        "name": "patch-ng",
+        "version": "(>=1.17.4",
+        "purl": "pkg:pypi/patch-ng@(>=1.17.4",
+        "bom-ref": "pypi/patch-ng@(>=1.17.4"
+      },
+      {
+        "type": "library",
+        "name": "conan",
+        "version": "(>=2.5.0",
+        "purl": "pkg:pypi/conan@(>=2.5.0",
+        "bom-ref": "pypi/conan@(>=2.5.0"
+      },
+      {
+        "type": "library",
+        "name": "boto3",
+        "version": "(>=1.39.16",
+        "purl": "pkg:pypi/boto3@(>=1.39.16",
+        "bom-ref": "pypi/boto3@(>=1.39.16"
+      },
+      {
+        "type": "library",
+        "name": "py7zr",
+        "version": "(>=1.0.0",
+        "purl": "pkg:pypi/py7zr@(>=1.0.0",
+        "bom-ref": "pypi/py7zr@(>=1.0.0"
+      }
+    ]
+  },
+  "elapsed_seconds": 219.6
+}
